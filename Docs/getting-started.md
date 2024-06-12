@@ -1,59 +1,74 @@
 ---
-
-title: Getting Started
+title: Getting started
 menu_order: 1
-post_status: publish
-post_excerpt: This is a post excerpt
-featured_image: _images/post-image.jpg
 taxonomy:
-    category:
-        - category-slug-1
-        - category-slug-2
-    post_tag:
-        - tag-1
-        - tag-2
-custom_fields:
-    field1: value 1
-    field2: value 2
-
+    doc_category: wordpress-plugins
 ---
 
-## My post content
+Using "Git it write" WordPress plugin, you can publish markdown present in a GitHub repository.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a lacinia orci.
-Nunc sodales massa enim, nec consectetur orci tempus ac.
+## The GitHub repository
 
-### Section with image
+Since posts are published from a GitHub repository, you should have a public GitHub repository. Please check [github docs](https://docs.github.com/en/github/getting-started-with-github/create-a-repo) on how to create a GitHub repository if you are new to it.
 
-![alt text for the image](/_images/pic4.jpg "Caption for the image")
+## Adding the repository to the plugin
 
-Nam rutrum ultricies sapien id rhoncus. In pellentesque efficitur suscipit.
-Aliquam vel est consectetur lectus malesuada mollis sit amet non neque. 
+Once you have a GitHub repository (or if you wish to pull from another public repository) you can configure Git it write plugin on the same. Your repository will have an owner and the name of the repository itself. This information is used to configure in the plugin settings page.
 
-### Section with link
+It does not matter if your repository is new, empty, old with files already. Below configuration can be done anytime.
 
-This is a [relative link](../sub-dir1/post3.md) which links to another markdown post w.r.t the current file.
-This is an [absolute link](/folder1/sub-dir1/post3.md) which links to another post w.r.t the root directory.
+1. Install and activate the plugin from WordPress -> Add new
+1. Go to Settings -> Git it write
+1. Click "Add a new repository to publish posts from"
+1. In the add repository page, enter the repository owner and the name.
+1. Enter the path of the folder in the repository you would like to publish in your website.
+1. Select a post type to which posts have to be published. A hierarchial post type is preferred as it allows parent, child posts in a tree like structure provided custom permalinks are configured in your site. Read [FAQ](./faq.md) for more information on this.
+1. Save the settings.
 
-### Section with HTML
+### Configuring authentication settings
 
-<section id="home">
-    <h2>Welcome to Our Website!</h2>
-    <p>This is a sample HTML page with JavaScript and CSS styling.</p>
-    <button type="button" onclick="showMessage()">Show message</button>
-</section>
+Git it write supports both public and private repositories. If you are publishing posts from a private repository, configure the authentication settings like GitHub username and [GitHub access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-token) under the "General settings" section. Note that this authentication setting applies to all the repositories which are configured.
 
-<script>
-    function showMessage() {
-        alert('Thank you for contacting us!');
-    }
-</script>
+## The webhook
 
-<!-- Sample CSS Style -->
-<style>
-    h1 {
-        color: red;
-    }
-</style>
+GitHub Webhook allows to notify the plugin whenever the files in the repository are modified. This allows the plugin to fetch the latest changes automatically and publish/update the posts automatically without any manual need to pull posts.
 
-### Section with Shortcodes
+If you do not own the repository then you cannot configure webhooks. Also if you do not wish to automatically update posts, then you can skip configuring the webhook.
+
+1. Go to Settings -> Git it write settings page.
+1. Under "General settings" enter a secret key which will be used by all the GitHub repositories you configure.
+1. Go to GitHub repository settings -> Webhook and add a webhook for the payload URL as mentioned in the settings page.
+1. Enter the same secret key in GitHub webhook settings page.
+1. Set the remaining webhook settings accordingly as mentioned.
+1. Save the settings.
+
+Webhook is now configured. So whenever repository changes, the payload URL will be notified and the plugin will take care of adding/updating the posts.
+
+**Note:** If there are many posts to publish/modify then the webhook request might fail or return HTTP code 500. This is because, the request can get timed out. But all the posts/changes will be published successfully.
+
+## Writing in markdown
+
+Markdown is a simple markup language which allows to easily write formatted text. Please refer [markdown guide](https://www.markdownguide.org/getting-started/) for more information on the syntax. Markdown files end with `.md` file extension.
+
+You can now organize the files in folders as you need and write your posts using markdown format.
+
+See [writing posts](./writing-posts.md) page for more information on this.
+
+## Publishing the posts
+
+### When webhook is configured
+
+Whenever you commit and push the changes or pull changes to the repository the GitHub will notify the plugin and the plugin will automatically publish the posts by reading the markdown files from the repository as HTML post content.
+
+### When webhook is not configured or manually publishing
+
+In Git it write settings page every repository has option to manually pull the posts to publish. The "Pull posts" link can be seen under the repository name in the table when the row is hovered over.
+
+There are two types of pull:
+
+1. Pull only changes - This will pull only the changes made to the repository.
+2. Pull all the files - This will pull all the files and overwrite all the posts. This is needed if you have changed the "content template" in the repository settings.
+
+## Viewing logs
+
+When posts are published by the plugin, all the file-by-file activities are logged. The logs can be seen using the "Logs" link in the settings page. This is helpful to debug and get to know when posts are published.
