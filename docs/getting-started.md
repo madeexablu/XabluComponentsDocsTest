@@ -1,5 +1,5 @@
 ---
-title: Getting started 21
+title: Getting started 22
 menu_order: 1
 taxonomy:
     doc_category: wordpress-plugins
