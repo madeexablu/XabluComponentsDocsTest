@@ -1,3 +1,8 @@
+---
+title: KeyFeature 1
+menu_order: 1
+---
+
 <div id="tab1" class="tab-content">
 
 ## Development
