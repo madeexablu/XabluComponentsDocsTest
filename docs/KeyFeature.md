@@ -2,6 +2,10 @@
 title: KeyFeature 1
 menu_order: 1
 ---
+<div class="tabs">
+  <button class="tab-button" onclick="openTab(event, 'tab1')">Designer</button>
+  <button class="tab-button" onclick="openTab(event, 'tab2')">Programmer</button>
+</div>
 
 <div id="tab1" class="tab-content">
 
