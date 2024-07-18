@@ -7,7 +7,7 @@ taxonomy:
 
 Using "Git it write" WordPress plugin, you can publish markdown present in a GitHub repository.
 
-## The GitHub repository 42
+## The GitHub repository 43
 
 Since posts are published from a GitHub repository, you should have a public GitHub repository. Please check [github docs](https://docs.github.com/en/github/getting-started-with-github/create-a-repo) on how to create a GitHub repository if you are new to it.
 
