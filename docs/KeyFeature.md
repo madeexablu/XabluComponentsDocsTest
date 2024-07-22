@@ -3,8 +3,8 @@ title: KeyFeature 2
 menu_order: 1
 ---
 <div class="tabs">
-  <button class="tab-button" onclick="openTab(event, 'tab1')">Designer</button>
-  <button class="tab-button" onclick="openTab(event, 'tab2')">Programmer</button>
+  <button class="tab-button" onclick="openTab(event, 'tab1')">Programmer</button>
+  <button class="tab-button" onclick="openTab(event, 'tab2')">Designer</button>
 </div>
 
 <div id="tab1" class="tab-content">
@@ -62,7 +62,7 @@ menu_order: 1
 </div>
 
 <div id="tab2" class="tab-content">
-  <h1 id="key-features">Key Features</h1>
+<h1 id="key-features">Key Features</h1>
 <p>There are two properties defined in Figma in the Avatar component:</p>
 <ul>
 <li>SizeType</li>
@@ -79,12 +79,29 @@ menu_order: 1
 </ul>
 <p>See the overview page for a visual illustration of the difference betweeen ImageFill and ImageFit.</p>
 <h2 id="avatar-content">Avatar Content</h2>
-<p>Depending on the chosen type, the content should be set as follows
-| AvatarType | How to set content                                                                     |
-|------------|:---------------------------------------------------------------------------------------|
-| ImageFit   | The icon can be set at the nested component <strong>AvatarXDS</strong> with the property IconSource |
-| ImageFill  | The image can be changed by setting another image as backgroundcolor to the avatar     |
-| Initials   | The initials can be set at the nested component <strong>Avatar XDS</strong> with the property Text  |</p>
+<p>Depending on the chosen type, the content should be set as follows</p>
+<table>
+<thead>
+<tr>
+<th>AvatarType</th>
+<th>How to set content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ImageFit</td>
+<td>The icon can be set at the nested component <strong>AvatarXDS</strong> with the property IconSource</td>
+</tr>
+<tr>
+<td>ImageFill</td>
+<td>The image can be changed by setting another image as backgroundcolor to the avatar</td>
+</tr>
+<tr>
+<td>Initials</td>
+<td>The initials can be set at the nested component <strong>Avatar XDS</strong> with the property Text</td>
+</tr>
+</tbody>
+</table>
 <h2 id="other-customization">Other customization</h2>
 <p>Besides the predefined properties within Figma, there are a few other things that can be customised. </p>
 <h3 id="color-changes">Color changes</h3>
