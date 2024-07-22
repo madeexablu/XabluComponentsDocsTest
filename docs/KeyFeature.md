@@ -9,8 +9,7 @@ menu_order: 1
 
 <div id="tab1" class="tab-content">
 
-<h1 id="development">Development</h2>
-<h2 id="key-features">Key Features</h2>
+<h1 id="key-features">Key Features</h2>
 <table>
 <thead>
 <tr>
