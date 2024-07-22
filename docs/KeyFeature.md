@@ -9,7 +9,7 @@ menu_order: 1
 
 <div id="tab1" class="tab-content">
 
-<h2 id="development">Development</h2>
+<h1 id="development">Development</h2>
 <h2 id="key-features">Key Features</h2>
 <table>
 <thead>
@@ -60,5 +60,40 @@ menu_order: 1
 <span class="hljs-tag">&lt;/<span class="hljs-name">VerticalStackLayout</span>&gt;</span>
 </code></pre>
 
+</div>
+
+<div id="tab2" class="tab-content">
+  <h1 id="key-features">Key Features</h1>
+<p>There are two properties defined in Figma in the Avatar component:</p>
+<ul>
+<li>SizeType</li>
+<li>AvatarType</li>
+</ul>
+<h2 id="sizetype">SizeType</h2>
+<p>10 different SizeTypes are predefined. Ranging from 3xs to 4xl. These can be used in different scenarios. <br> A smaller size is advised in a navigation bar, but on a profile page a larger size can be displayed for example. </br></p>
+<h2 id="avatartype">AvatarType</h2>
+<p>There are three types initials, imageFit, or ImageFill. Which to use depends on the scenario</p>
+<ul>
+<li><strong>ImageFit</strong> indicates that the total image fits within the whole circle. This value is advised to be used for icons. </li>
+<li><strong>ImageFill</strong> indicates that the image is cropped to be a circle. This type is advised to be used for pictures. </li>
+<li><strong>Initials</strong> can be used in scenarios where e.g. an image is lacking. </li>
+</ul>
+<p>See the overview page for a visual illustration of the difference betweeen ImageFill and ImageFit.</p>
+<h2 id="avatar-content">Avatar Content</h2>
+<p>Depending on the chosen type, the content should be set as follows
+| AvatarType | How to set content                                                                     |
+|------------|:---------------------------------------------------------------------------------------|
+| ImageFit   | The icon can be set at the nested component <strong>AvatarXDS</strong> with the property IconSource |
+| ImageFill  | The image can be changed by setting another image as backgroundcolor to the avatar     |
+| Initials   | The initials can be set at the nested component <strong>Avatar XDS</strong> with the property Text  |</p>
+<h2 id="other-customization">Other customization</h2>
+<p>Besides the predefined properties within Figma, there are a few other things that can be customised. </p>
+<h3 id="color-changes">Color changes</h3>
+<ul>
+<li>BackgroundColor</li>
+<li>BorderColor</li>
+<li>TextColor (For AvatarType Initials)</li>
+</ul>
+<p>Sizes and forms cannot be adjusted at the moment for avatars. </p>
 
 </div>
