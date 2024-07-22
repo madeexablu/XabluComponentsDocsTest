@@ -1,8 +1,3 @@
-To ensure that Markdown inside HTML divs gets correctly rendered, we can take advantage of a technique that involves splitting the Markdown and HTML. This approach avoids potential conflicts where the Markdown processor may not correctly handle Markdown inside HTML tags.
-
-Here's how you can structure your file:
-
-```markdown
 ---
 title: KeyFeature 3
 menu_order: 1
