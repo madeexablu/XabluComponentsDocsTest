@@ -1,8 +1,10 @@
-To ensure that your markdown and HTML work together seamlessly, you can wrap your markdown content in HTML comments when inside HTML divs. This prevents the markdown processor from getting confused. Here's how you can adjust your markdown file:
+To ensure that Markdown inside HTML divs gets correctly rendered, we can take advantage of a technique that involves splitting the Markdown and HTML. This approach avoids potential conflicts where the Markdown processor may not correctly handle Markdown inside HTML tags.
+
+Here's how you can structure your file:
 
 ```markdown
 ---
-title: KeyFeature 2
+title: KeyFeature 3
 menu_order: 1
 ---
 
@@ -12,8 +14,33 @@ menu_order: 1
 </div>
 
 <div id="tab1" class="tab-content">
-<!-- Markdown content starts -->
+  <!-- Placeholder for tab1 content -->
+  {{% tab1-content %}}
+</div>
 
+<div id="tab2" class="tab-content">
+  <!-- Placeholder for tab2 content -->
+  {{% tab2-content %}}
+</div>
+
+<script>
+function openTab(evt, tabName) {
+  var i, tabcontent, tabbuttons;
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tabbuttons = document.getElementsByClassName("tab-button");
+  for (i = 0; i < tabbuttons.length; i++) {
+    tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+<!-- Content for tab1 -->
+{{% tab1-content %}}
 ## Development
 
 ## Key Features
@@ -45,34 +72,20 @@ xmlns:xablu="https://schemas.xablu.com/2023/components"
 </VerticalStackLayout>
 ```
 
-<!-- Markdown content ends -->
-</div>
+<!-- Content for tab2 -->
+{{% tab2-content %}}
+## Programmer Section
 
-<div id="tab2" class="tab-content">
-<!-- Placeholder for second tab -->
-<p>Content for the Programmer tab goes here.</p>
-</div>
-
-<script>
-function openTab(evt, tabName) {
-  var i, tabcontent, tabbuttons;
-  tabcontent = document.getElementsByClassName("tab-content");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tabbuttons = document.getElementsByClassName("tab-button");
-  for (i = 0; i < tabbuttons.length; i++) {
-    tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
-  }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-</script>
+Content for the Programmer tab goes here.
 ```
 
 ### Explanation:
-1. **HTML Structure for Tabs**: The HTML structure for the tabs remains the same.
-2. **Markdown within HTML**: The markdown content is placed inside HTML comments (`<!-- ... -->`) to ensure that the markdown processor treats it as part of the markdown flow and processes it correctly.
-3. **JavaScript for Tabs**: The JavaScript function for switching tabs is included as is.
 
-This approach ensures that your markdown processor correctly interprets the markdown within the HTML divs, and your tab functionality works as expected. If you need more content for the second tab, you can replace the placeholder with actual markdown content wrapped similarly.
+1. **HTML Structure for Tabs**: The HTML structure and JavaScript function for switching tabs are defined as before.
+2. **Content Placeholders**: Use placeholders (e.g., `{{% tab1-content %}}` and `{{% tab2-content %}}`) to denote where the Markdown content for each tab should go.
+3. **Markdown Content**: Define the actual Markdown content for each tab outside the HTML divs, using the same placeholders to ensure the content is properly rendered.
+
+### Note:
+The placeholders (`{{% tab1-content %}}` and `{{% tab2-content %}}`) are used to logically separate content. You need to replace these placeholders with a method your Markdown processor or template engine supports to include content. If you're using a specific Markdown processor that supports partials or includes, you should use the appropriate syntax.
+
+If your Markdown processor does not support this kind of placeholder syntax directly, you may need to manually split the file into multiple sections and ensure they are correctly rendered in the final output. The key is to avoid wrapping the Markdown content directly inside the HTML divs.
