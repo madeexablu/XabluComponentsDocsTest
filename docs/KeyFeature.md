@@ -1,5 +1,5 @@
 ---
-title: KeyFeature 1
+title: KeyFeature 2
 menu_order: 1
 ---
 <div class="tabs">
