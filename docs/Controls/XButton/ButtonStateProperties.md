@@ -12,6 +12,7 @@ The StateProperties are the intended way to alter the visuals of any component. 
 ## ButtonStateProperties
 
 The key for the ButtonStateProperties is defined as follows:
+
 | Key         | Type               | Options                                                           |
 | ----------- | ------------------ | ----------------------------------------------------------------- |
 | ButtonType  | ButtonTypes        | `Primary`<br>`SecondaryFilled`<br>`SecondaryOutlined`<br>`Action` |
