@@ -9,7 +9,7 @@ taxonomy:
 
 That where a user can click or tap on to perform an action. It is a complete Button component that allows for a left and right icon in addition to text. <br> Additionally, it functions as an IconButton if only the left icon is set. </br>
 
-![Button example](_images/Button.png)
+![Button example](/_images/Button.png)
 
 ## Usage
 

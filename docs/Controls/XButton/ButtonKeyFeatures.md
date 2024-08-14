@@ -95,7 +95,7 @@ There are four button types:
 * Secondary outline
 * Action
 
-![ButtonTypes](_images/ButtonTypes.png)
+![ButtonTypes](/_images/ButtonTypes.png)
 
 ### VisualStates
 

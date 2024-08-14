@@ -18,6 +18,7 @@ The key for the ButtonStateProperties is defined as follows:
 | VisualState | ButtonVisualStates | `Normal`<br>`Pressed`<br>`Disabled`                               |
 
 For any combination of ButtonType and VisualState the following properties can be set to change the visuals of the Button.
+
 | Property         | Type   | Description                                                                     |
 | ---------------- | ------ | ------------------------------------------------------------------------------- |
 | BackgroundColor  | Color  | BackgroundColor of the Button.                                                  |
