@@ -124,7 +124,7 @@ A button with only an icon can be created in Figma by setting:
 
 A button has the possibility to include text. Whether the text is shown, is set with the HasText property at <br> the Button component itself. The content is set at the text property in the nested component **Button XDS**.
 
-### Other customization
+### Other customizations
 
 Besides the predefined properties within Figma, there are a few other things that can be customised. For any combination of ButtonType <br> and VisualState the following properties can be changed:</br>
 
