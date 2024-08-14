@@ -95,7 +95,7 @@ There are four button types:
 * Secondary outline
 * Action
 
-![ButtonTypes](ButtonTypes.png)
+![ButtonTypes](_images/ButtonTypes.png)
 
 ### VisualStates
 
@@ -127,6 +127,7 @@ A button has the possibility to include text. Whether the text is shown, is set 
 ### Other customization
 
 Besides the predefined properties within Figma, there are a few other things that can be customised. For any combination of ButtonType <br> and VisualState the following properties can be changed:</br>
+
 | Property         | Description                                            |
 | ---------------- | ------------------------------------------------------ |
 | BackgroundColor  | BackgroundColor of the Button.                         |
